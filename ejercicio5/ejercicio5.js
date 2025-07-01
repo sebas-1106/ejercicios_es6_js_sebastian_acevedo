@@ -8,13 +8,12 @@ const streamers = [
 	{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
 	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
 ];
-const input = document.querySelector('input[data-function="toFilterStreamers"]');
+const input = document.querySelector('[data-function="toFilterStreamers"]');
 
-// Añade un evento 'input' para filtrar mientras se escribe
 input.addEventListener('input', () => {
-    const searchTerm = input.value; // Obtiene el valor del input
-    const filteredStreamers = streamers.filter(streamer => 
-        streamer.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const searchTerm = input.value.toLowerCase();
+    const filteredStreamers = streamers.filter(streamer =>
+        streamer.name.toLowerCase().includes(searchTerm)
     );
-    console.log(filteredStreamers); // Muestra los streamers filtrados en la consola
+    console.log(filteredStreamers);
 });
